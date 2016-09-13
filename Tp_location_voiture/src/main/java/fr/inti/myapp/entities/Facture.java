@@ -32,9 +32,8 @@ public class Facture {
 	}
 
 
-	public Facture(Long id, Date dateFacturation) {
+	public Facture(Date dateFacturation) {
 		super();
-		this.id = id;
 		this.dateFacturation = dateFacturation;
 	}
 

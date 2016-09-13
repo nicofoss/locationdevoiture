@@ -1,5 +1,6 @@
 package fr.inti.myapp.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -20,9 +21,9 @@ public class VoitureServiceImpl implements IVoitureService{
 	}
 
 	@Override
-	public Voiture add(Voiture t) {
+	public Voiture add(Voiture t, Long idAgence) {
 		
-		return dao.add(t);
+		return dao.add(t, idAgence);
 	}
 
 	@Override
@@ -49,4 +50,25 @@ public class VoitureServiceImpl implements IVoitureService{
 		return dao.getVoitureById(id);
 	}
 
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -22,6 +22,7 @@ public class Voiture {
 	private String annee;
 	private Double prix;
 	private String immatriculation;
+	private int nbLocation;
 	
 	@ManyToOne()
 	@JoinColumn(name = "ref_agence")
@@ -111,6 +112,14 @@ public class Voiture {
 
 	public void setListReservation(List<Reservation> listReservation) {
 		this.listReservation = listReservation;
+	}
+
+	public int getNbLocation() {
+		return nbLocation;
+	}
+
+	public void setNbLocation(int nbLocation) {
+		this.nbLocation = nbLocation;
 	}
 	
 	

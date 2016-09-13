@@ -9,7 +9,9 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
 
-<!-- 	<resources mapping="/resources/**" location="/resources/" /> -->
+    <mvc:resources mapping="/resources/**" location="/resources/" /> 
+	<context:component-scan base-package="fr.inti.myapp" />
+	<context:component-scan base-package="fr.inti.myapp.MB" />
 	
 	<!-- injection agence -->
 	<bean id="AgenceDao" class="fr.inti.myapp.Dao.AgenceDaoImpl"/>
@@ -29,19 +31,19 @@
 		<property name="dao" ref="FactureDao"></property>
 	</bean>
 	
-	<!-- injection facture -->
+	<!-- injection resa -->
 	<bean id="ReservationDao" class="fr.inti.myapp.Dao.ReservationDaoImpl"/>
 	<bean id="ReservationService" class="fr.inti.myapp.service.ReservationServiceImpl">
 		<property name="dao" ref="ReservationDao"></property>
 	</bean>
 	
-	<!-- injection facture -->
+	<!-- injection voiture -->
 	<bean id="VoitureDao" class="fr.inti.myapp.Dao.VoitureDaoImpl"/>
 	<bean id="VoitureService" class="fr.inti.myapp.service.VoitureServiceImpl">
 		<property name="dao" ref="VoitureDao"></property>
 	</bean>
 	
-	<context:component-scan base-package="fr.inti.myapp" />
+
 	
 	<bean id="datasource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">

@@ -21,9 +21,9 @@ public class FactrueServiceImpl implements IFactureService{
 	}
 
 	@Override
-	public Facture add(Facture t) {
+	public Facture add(Facture facture, Long idAgence, Long idResa) {
 		
-		return dao.add(t);
+		return dao.add(facture, idAgence, idResa);
 	}
 
 	@Override

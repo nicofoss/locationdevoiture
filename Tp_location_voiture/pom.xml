@@ -219,15 +219,7 @@
 			<version>2.2.1</version>
 		</dependency>
 
-		<!-- bootsfaces -->
-
-		<dependency>
-			<groupId>net.bootsfaces</groupId>
-			<artifactId>bootsfaces</artifactId>
-			<version>0.9.1</version>
-			<scope>compile</scope>
-		</dependency>
-
+	
 	</dependencies>
     <build>
         <plugins>

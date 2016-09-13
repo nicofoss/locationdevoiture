@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import fr.inti.myapp.entities.Agence;
 import fr.inti.myapp.entities.Voiture;
 
 public class VoitureDaoImpl implements IVoitureDao{
@@ -17,7 +18,17 @@ public class VoitureDaoImpl implements IVoitureDao{
 	Logger log = Logger.getLogger("VoitureDAOImpl");
 	
 	@Override
-	public Voiture add(Voiture t) {
+	public Voiture add(Voiture t, Long idAgence) {
+		
+		try {
+			Agence a = em.find(Agence.class, idAgence);
+			t.setAgence(a);
+		} catch (Exception e) {
+			log.info("impossible dassocier la voiture avec lagence");
+		}
+		
+		
+		
 		em.persist(t);
 		log.info("la voiture " + t.getId() + " a bien ete ajoute");
 		return t;

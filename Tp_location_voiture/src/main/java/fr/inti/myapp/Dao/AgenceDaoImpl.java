@@ -17,10 +17,10 @@ public class AgenceDaoImpl implements IAgenceDao{
 	Logger log = Logger.getLogger("AgenceDAOImpl");
 	
 	@Override
-	public Agence add(Agence t) {
-		em.persist(t);
-		log.info("agence " + t.getId() +" bien ajoute");
-		return t;
+	public Agence add(Agence agence) {
+		em.persist(agence);
+		log.info("agence " + agence.getId() +" bien ajoute");
+		return agence;
 	}
 
 	@Override
@@ -32,16 +32,16 @@ public class AgenceDaoImpl implements IAgenceDao{
 	}
 
 	@Override
-	public Agence update(Agence t) {
-		em.merge(t);
-		log.info("agence " + t.getId() +" bien update");
-		return t;
+	public Agence update(Agence agence) {
+		em.merge(agence);
+		log.info("agence " + agence.getId() +" bien update");
+		return agence;
 	}
 
 	@Override
-	public Agence delete(Agence t) {
-		em.remove(t);
-		log.info("agence " + t.getId() +" bien supp");
+	public Agence delete(Agence agence) {
+		em.remove(agence);
+		log.info("agence " + agence.getId() +" bien supp");
 		return null;
 	}
 

@@ -21,9 +21,9 @@ public class ClientServiceImpl implements IClientService{
 	}
 
 	@Override
-	public Client add(Client t) {
+	public Client add(Client t, Long idAgence) {
 		
-		return dao.add(t);
+		return dao.add(t, idAgence);
 	}
 
 	@Override

@@ -1,13 +1,83 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
-<h:head></h:head> 
-<body> 
+<h:head></h:head>
+<h:body>
+    
+    
+                               <h:form>
+								<p:panel header="Nouvelle agenceBean">
+									
+									<h:panelGrid columns="2" cellpadding="5">
+										<h:outputLabel value="Adresse : "/>
+										<h:inputText value="#{agenceBean.agence.adresse}" required="true" />
+									</h:panelGrid>
+									<h:panelGrid columns="2" cellpadding="5">
+										<h:outputLabel value="Mail : "/>
+										<h:inputText value="#{agenceBean.agence.mail}" required="true" />
+									</h:panelGrid>
+									<h:panelGrid columns="2" cellpadding="5">
+										<p:commandButton value="save" action="#{agenceBean.add2}"/>
+									</h:panelGrid>
+								</p:panel>
+							</h:form>
+    
+    
 
-	<h1>Hello World</h1>
+	<h3 align="center" style="font-size: 20px; color: #4a4a72">Tp
+		Location Voiture</h3>
+	<p:tabView>
+		<p:tab title="Zone agenceBean">
+			<h:panelGrid columns="1" cellpadding="1">
 
-</body> 
+				<p:accordionPanel>
+					<p:tab title="Creer une nouvelle agenceBean">
+						<h:panelGrid columns="1" cellpadding="1">
+
+							<h:form>
+								<p:panel header="Nouvelle agenceBean">
+									<h:panelGrid columns="2" cellpadding="5">
+										<h:outputLabel value="Nom : "/>
+										<h:inputText id="nom" requiredMessage="vuillez ..." value="#{agenceBean.nom}" required="true" />
+									</h:panelGrid>
+									<h:message for="nom"></h:message>
+									<h:panelGrid columns="2" cellpadding="5">
+										<h:outputLabel value="Adresse : "/>
+										<h:inputText value="#{agenceBean.adresse}" required="true" />
+									</h:panelGrid>
+									<h:panelGrid columns="2" cellpadding="5">
+										<h:outputLabel value="Mail : "/>
+										<h:inputText value="#{agenceBean.mail}" required="true" />
+									</h:panelGrid>
+									<h:panelGrid columns="2" cellpadding="5">
+										<p:commandButton value="save" action="#{agenceBean.add}"></p:commandButton>
+									</h:panelGrid>
+								</p:panel>
+							</h:form>
+
+						</h:panelGrid>
+					</p:tab>
+					<p:tab title="Charger une agenceBean deja existante">
+						<h:panelGrid columns="1" cellpadding="1">
+							<h:outputText value="formulire de recherche agenceBeanBean" />
+						</h:panelGrid>
+					</p:tab>
+				</p:accordionPanel>
+
+			</h:panelGrid>
+		</p:tab>
+		<p:tab title="Zone Client">
+			<h:panelGrid columns="1" cellpadding="1">
+
+			</h:panelGrid>
+		</p:tab>
+	</p:tabView>
+
+
+
+</h:body>
 </html>

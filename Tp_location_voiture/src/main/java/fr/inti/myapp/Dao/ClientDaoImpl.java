@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import fr.inti.myapp.entities.Agence;
 import fr.inti.myapp.entities.Client;
 
 public class ClientDaoImpl implements IClientDao{
@@ -17,7 +18,15 @@ public class ClientDaoImpl implements IClientDao{
 	Logger log = Logger.getLogger("ClientDAOImpl");
 	
 	@Override
-	public Client add(Client t) {
+	public Client add(Client t, Long idAgence) {
+		
+		try {
+			Agence a = em.find(Agence.class, idAgence);
+			a.getListClient().add(t);
+		} catch (Exception e) {
+			log.info("impossible dassocier le client ac lagence");
+		}
+		
 		em.persist(t);
 		log.info("le client " + t.getId() + " a bien ete ajoute");
 		return t;

@@ -26,6 +26,7 @@ public class Client {
 	private Date datePermis;
 	@Temporal(TemporalType.DATE)
 	private Date dateNaissance;
+	private Integer depenseTotal;
 	
 	@OneToMany(mappedBy = "client")
 	private List<Reservation> listReservations;
@@ -112,6 +113,14 @@ public class Client {
 
 	public void setDateNaissance(Date dateNaissance) {
 		this.dateNaissance = dateNaissance;
+	}
+
+	public Integer getDepenseTotal() {
+		return depenseTotal;
+	}
+
+	public void setDepenseTotal(Integer depenseTotal) {
+		this.depenseTotal = depenseTotal;
 	}
 
 	public List<Reservation> getListReservations() {

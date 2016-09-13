@@ -20,9 +20,9 @@ public class ReservationServiceImpl implements IReservationService{
 	}
 
 	@Override
-	public Reservation add(Reservation t) {
+	public Reservation add(Reservation t, Long idVoiture, Long idClient, Long idAgence) {
 		
-		return dao.add(t);
+		return dao.add(t, idVoiture, idClient, idAgence);
 	}
 
 	@Override
